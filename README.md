@@ -17,7 +17,7 @@ This project was developed for the **Capstone Project - Student Developer Initia
 * **Mobile & Desktop Ready:** A fully responsive layout and on-screen touch controls make the game playable on any device.
 * **10-Level Campaign:** Progress through 10 unique levels with increasing difficulty.
 * **Complex Objectives:** Players must collect all data packets before the extraction zone becomes active.
-* **Diverse Enemy Types:** Face static and moving radars, sweeping searchlights, patrolling jets, and locking SAM sites.
+* **Diverse Enemy Types:** Face static and moving radars, sweeping searchlights, patrolling jets, and locking SAM (Surface-to-Air Missile) sites.
 * **Resource Management:** Manage a limited fuel supply that depletes with movement and a strict time limit for each level.
 * **Lives & Scoring System:** Start with 3 lives, find bonus lives in later levels, and earn a score based on performance.
 * **Persistent Leaderboard:** The game saves the top 5 scores locally, encouraging replayability.
