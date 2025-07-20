@@ -13,6 +13,15 @@
     <div class="main-layout">
         <div class="game-container">
             <canvas id="gameCanvas" width="800" height="600"></canvas>
+            
+            <!-- NEW: On-screen controls for mobile -->
+            <div id="d-pad" class="d-pad">
+                <button id="d-pad-up" class="d-pad-button up">▲</button>
+                <button id="d-pad-left" class="d-pad-button left">◀</button>
+                <button id="d-pad-right" class="d-pad-button right">▶</button>
+                <button id="d-pad-down" class="d-pad-button down">▼</button>
+            </div>
+
             <div id="levelModal" class="modal">
                 <h2 id="modalTitle"></h2>
                 <p id="modalScore" style="text-align: center;"></p>
@@ -26,7 +35,7 @@
                 <h2>Mission Briefing</h2>
                 <p><strong>Objective:</strong> Successfully navigate your drone through 10 sectors. In each sector, you must collect all required data packets (🗎) to activate the extraction zone.</p>
                 <p><strong>Extraction:</strong> The extraction zone will remain RED and inactive until all data is collected. Once all data is gathered, it will turn BLUE.</p>
-                <p><strong>Controls:</strong> Use the <strong>Arrow Keys</strong> to maneuver your drone.</p>
+                <p><strong>Controls:</strong> Use the <strong>Arrow Keys</strong> or the <strong>on-screen D-pad</strong> to maneuver your drone.</p>
                 <p>Good luck, pilot.</p>
                 <button id="startButton">Start Mission</button>
             </div>
