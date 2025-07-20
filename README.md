@@ -1,21 +1,22 @@
 # drone-recon-mission-minigame
 Drone Recon Mission (a Mini-Game)
-Description
 
 Drone Recon Mission is a 2D stealth action game built with vanilla HTML, CSS, and JavaScript. The player pilots a reconnaissance drone through 10 increasingly difficult levels. The objective is to collect all required data packets in each level while avoiding enemy detection and environmental hazards, and then proceed to the extraction zone before running out of time or fuel.
 
-This project was developed as a capstone project for the HACKTIV8 Student Developer Initiative, focusing on the "Mini-Games" category.
+This project was developed as a capstone project for the HACKTIV8 Student Developer Initiative, focusing on the "Mini-Games" category. It is fully responsive and playable on both desktop (keyboard) and mobile (touchscreen) devices.
 Technologies Used
 
     HTML5: For the core structure and layout of the game.
 
-    CSS3: For all styling, including the retro terminal aesthetic, animations, and UI elements.
+    CSS3: For all styling, including the retro terminal aesthetic, animations, UI elements, and responsive design via media queries.
 
-    JavaScript (ES6): For all game logic, including player controls, enemy AI, physics, collision detection, and state management.
+    JavaScript (ES6): For all game logic, including player controls (keyboard and touch), enemy AI, physics, collision detection, and state management.
 
     Browser localStorage: Used to persist the high-score leaderboard on the player's computer.
 
 Features
+
+    Mobile & Desktop Ready: A fully responsive layout and on-screen touch controls make the game playable on any device.
 
     10-Level Campaign: Progress through 10 unique levels with increasing difficulty.
 
