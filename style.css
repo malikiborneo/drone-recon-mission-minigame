@@ -6,7 +6,8 @@ body {
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 20px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 h1 {
@@ -15,23 +16,29 @@ h1 {
     border-bottom: 2px solid #00ff41;
     padding-bottom: 5px;
     margin-top: 0;
+    text-align: center;
 }
 
 .main-layout {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    width: 100%;
+    max-width: 1100px; /* Max width for desktop layout */
 }
 
 .game-container {
     border: 2px solid #00ff41;
     box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
     position: relative;
+    width: 800px; /* Fixed width for desktop */
 }
 
 #gameCanvas {
     background-color: #000;
     display: block;
+    width: 100%;
+    height: auto;
 }
 
 .right-panel {
@@ -39,6 +46,7 @@ h1 {
     padding: 10px;
     border: 1px solid #333;
     background-color: #222;
+    flex-shrink: 0; /* Prevent panel from shrinking */
 }
 
 .right-panel h2 {
@@ -124,6 +132,8 @@ h1 {
     text-align: center;
     z-index: 10;
     box-shadow: 0 0 25px #00ff41;
+    width: 80%;
+    box-sizing: border-box;
 }
 
 .modal h2 {
@@ -173,4 +183,60 @@ h1 {
     text-align: center;
     font-size: 1.2em;
     margin-top: 10px;
+}
+
+/* --- NEW: On-Screen Controls Styling --- */
+.d-pad {
+    display: none; /* Hidden by default on desktop */
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.6;
+}
+
+.d-pad-button {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #555;
+    border: 1px solid #888;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.d-pad-button.up { top: 0; left: 40px; }
+.d-pad-button.down { bottom: 0; left: 40px; }
+.d-pad-button.left { top: 40px; left: 0; }
+.d-pad-button.right { top: 40px; right: 0; }
+
+
+/* --- NEW: Responsive Media Queries --- */
+@media (max-width: 1100px) {
+    .main-layout {
+        flex-direction: column;
+        align-items: center;
+    }
+    .game-container {
+        width: 100%;
+        max-width: 800px; /* Ensure it doesn't get too big on tablets */
+    }
+    .right-panel {
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+/* Show D-Pad on touch devices or small screens */
+@media (hover: none) and (pointer: coarse), (max-width: 768px) {
+    .d-pad {
+        display: block;
+    }
 }
