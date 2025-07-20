@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Recon Mission - Campaign</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Drone Recon Mission</h1>
+
+    <div class="main-layout">
+        <div class="game-container">
+            <canvas id="gameCanvas" width="800" height="600"></canvas>
+            <div id="levelModal" class="modal">
+                <h2 id="modalTitle"></h2>
+                <p id="modalScore" style="text-align: center;"></p>
+                <div id="nameInputContainer" style="display: none;">
+                    <label for="nameInput">Enter Your Name:</label><br>
+                    <input type="text" id="nameInput">
+                </div>
+                <button id="modalButton"></button>
+            </div>
+            <div id="briefingModal" class="modal">
+                <h2>Mission Briefing</h2>
+                <p><strong>Objective:</strong> Successfully navigate your drone through 10 sectors. In each sector, you must collect all required data packets (🗎) to activate the extraction zone.</p>
+                <p><strong>Extraction:</strong> The extraction zone will remain RED and inactive until all data is collected. Once all data is gathered, it will turn BLUE.</p>
+                <p><strong>Controls:</strong> Use the <strong>Arrow Keys</strong> to maneuver your drone.</p>
+                <p>Good luck, pilot.</p>
+                <button id="startButton">Start Mission</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <h2 id="levelTitle">Level 1</h2>
+            <div id="gameStatus">Awaiting Deployment</div>
+            <div class="stats-container">
+                <p><span>Time Left:</span> <span id="timer">--</span></p>
+                <p><span>Lives:</span> <span id="lives"></span></p>
+                <p><span>Data Packets:</span> <span id="dataCounter">--/--</span></p>
+                <p><span>Fuel:</span></p>
+                <div id="fuel-container"><div id="fuel-bar"></div></div>
+            </div>
+            <div class="legend">
+                <h2>Intel Legend</h2>
+                <div class="legend-item"><div class="legend-symbol" style="background-color: #00ff41;"></div><span>Your Drone</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="color: #fff;">🗎</div><span>Data Packet</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="border-color: rgba(255, 65, 65, 0.7); border-width: 2px; border-style: solid; border-radius: 50%;"></div><span>Radar</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="background-color: rgba(255, 255, 0, 0.3);"></div><span>Searchlight</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="background-color: #c0c0c0;"></div><span>Patrol Jet</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="color: #ff8c00;">S</div><span>SAM Site</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="color: #00ff41;">♥</div><span>Bonus Life</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="background-color: rgba(139, 69, 19, 0.5);"></div><span>No-Fly Zone</span></div>
+                <div class="legend-item"><div class="legend-symbol" style="background-color: #41a0ff;"></div><span>Extraction</span></div>
+            </div>
+            <div class="leaderboard">
+                <h2>Top Pilots</h2>
+                <ol id="leaderboardList"></ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
