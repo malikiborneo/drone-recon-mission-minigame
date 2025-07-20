@@ -2,6 +2,8 @@
 
 *Created by: Reza Maliki Akbar (maliki_borneo)*
 
+You can access and play it here https://maliki-dronerecon-game.vercel.app/
+
 ## Description
 Drone Recon Mission is a 2D stealth action game built with vanilla HTML, CSS, and JavaScript. The player pilots a reconnaissance drone through 10 increasingly difficult levels. The objective is to collect all required data packets in each level while avoiding enemy detection and environmental hazards, and then proceed to the extraction zone before running out of time or fuel.
 
