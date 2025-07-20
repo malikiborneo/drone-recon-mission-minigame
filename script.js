@@ -16,6 +16,13 @@ const nameInputContainer = document.getElementById('nameInputContainer');
 const nameInput = document.getElementById('nameInput');
 const leaderboardList = document.getElementById('leaderboardList');
 
+// NEW: D-Pad buttons
+const dPadUp = document.getElementById('d-pad-up');
+const dPadDown = document.getElementById('d-pad-down');
+const dPadLeft = document.getElementById('d-pad-left');
+const dPadRight = document.getElementById('d-pad-right');
+
+
 let drone, enemies, extractionZone, keys, gameOver, gameWon, gameOverMessage, score, totalScore, currentLevel, lives, dataPackets, collectedData;
 let missionTimer, timerInterval, gameStarted = false;
 
@@ -113,6 +120,35 @@ modalButton.addEventListener('click', () => {
         beginGameplay();
     }
 });
+
+// --- NEW: Touch Controls Event Listeners ---
+function handleTouch(event, isStart) {
+    event.preventDefault(); // Prevent screen scrolling
+    const keyMap = {
+        'd-pad-up': 'ArrowUp',
+        'd-pad-down': 'ArrowDown',
+        'd-pad-left': 'ArrowLeft',
+        'd-pad-right': 'ArrowRight'
+    };
+    const key = keyMap[event.currentTarget.id];
+    if (key) {
+        keys[key] = isStart;
+    }
+}
+
+dPadUp.addEventListener('touchstart', (e) => handleTouch(e, true));
+dPadDown.addEventListener('touchstart', (e) => handleTouch(e, true));
+dPadLeft.addEventListener('touchstart', (e) => handleTouch(e, true));
+dPadRight.addEventListener('touchstart', (e) => handleTouch(e, true));
+
+dPadUp.addEventListener('touchend', (e) => handleTouch(e, false));
+dPadDown.addEventListener('touchend', (e) => handleTouch(e, false));
+dPadLeft.addEventListener('touchend', (e) => handleTouch(e, false));
+dPadRight.addEventListener('touchend', (e) => handleTouch(e, false));
+
+// Prevent context menu on long press
+canvas.addEventListener('contextmenu', e => e.preventDefault());
+
 
 // --- Update Functions ---
 function updateDrone() {
